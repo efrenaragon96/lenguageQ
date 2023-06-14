@@ -1,5 +1,6 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
 package parser;
+import parser.LenguajeQParser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -119,97 +120,97 @@ public interface LenguajeQListener extends ParseTreeListener {
 	void exitSentMean(LenguajeQParser.SentMeanContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpMean}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpMean(LenguajeQParser.ExpMeanContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpMean}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpMean(LenguajeQParser.ExpMeanContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpCte}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpCte(LenguajeQParser.ExpCteContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpCte}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpCte(LenguajeQParser.ExpCteContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpMulDiv}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpMulDiv(LenguajeQParser.ExpMulDivContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpMulDiv}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpMulDiv(LenguajeQParser.ExpMulDivContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpSigno}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpSigno(LenguajeQParser.ExpSignoContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpSigno}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpSigno(LenguajeQParser.ExpSignoContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpID}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpID(LenguajeQParser.ExpIDContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpID}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpID(LenguajeQParser.ExpIDContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpNeg}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpNeg(LenguajeQParser.ExpNegContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpNeg}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpNeg(LenguajeQParser.ExpNegContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpParent}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpParent(LenguajeQParser.ExpParentContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpParent}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpParent(LenguajeQParser.ExpParentContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExpAddSub}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpAddSub(LenguajeQParser.ExpAddSubContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ExpAddSub}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpAddSub(LenguajeQParser.ExpAddSubContext ctx);

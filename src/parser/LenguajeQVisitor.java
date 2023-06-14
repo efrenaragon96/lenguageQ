@@ -78,56 +78,56 @@ public interface LenguajeQVisitor<T> extends ParseTreeVisitor<T> {
 	T visitSentMean(LenguajeQParser.SentMeanContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpMean}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpMean(LenguajeQParser.ExpMeanContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpCte}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpCte(LenguajeQParser.ExpCteContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpMulDiv}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpMulDiv(LenguajeQParser.ExpMulDivContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpSigno}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpSigno(LenguajeQParser.ExpSignoContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpID}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpID(LenguajeQParser.ExpIDContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpNeg}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpNeg(LenguajeQParser.ExpNegContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpParent}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpParent(LenguajeQParser.ExpParentContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExpAddSub}
-	 * labeled alternative in {@link LenguajeQParser#exp}.
+	 * labeled alternative in {@link LenguajeQParser#exp()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */

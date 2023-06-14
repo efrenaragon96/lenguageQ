@@ -1,6 +1,6 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
 package parser;
-
+import parser.LenguajeQParser;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**

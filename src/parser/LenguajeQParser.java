@@ -1,6 +1,5 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
 package parser;
-import parser.LenguajeQVisitor;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -134,7 +133,7 @@ public class LenguajeQParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LenguajeQVisitor) return ((LenguajeQVisitor<? extends T>)visitor).visitStart(this);
+			if ( visitor instanceof LenguajeQVisitor ) return ((LenguajeQVisitor<? extends T>)visitor).visitStart(this);
 			else return visitor.visitChildren(this);
 		}
 	}
