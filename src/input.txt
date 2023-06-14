@@ -1,0 +1,12 @@
+
+int a=5;
+float f;
+string s="Imprimiendo";
+string s1;
+float f1=18.5;
+begin
+IF(!a)
+    PRINTLN("Imprimiendo True ",a);
+else
+    PRINTLN("Imprimiendo False ",a);
+end
