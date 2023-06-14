@@ -1,5 +1,6 @@
 begin
 float s=mean(5,10,mean(2,4));
+println("La media es: ");
 println(s);
 
 end

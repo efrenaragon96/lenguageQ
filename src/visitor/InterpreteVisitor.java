@@ -193,7 +193,7 @@ public class InterpreteVisitor extends LenguajeQBaseVisitor<TreeParserNode> {
                             break;
                         case FLOAT:
                             //Actualización del valor en el símbolo
-                            var.setValue((float) aux.getValue());
+                            var.setValue(Float.parseFloat("" + aux.getValue()));
                             break;
                         //No es necesario pq ya se chequearon los tipos incompatibles
                         //case STRING:
@@ -240,6 +240,27 @@ public class InterpreteVisitor extends LenguajeQBaseVisitor<TreeParserNode> {
         //Quito la TS asociada al if de la pila
         environment.pop();
         return null;
+    }
+    @Override
+    public TreeParserNode visitSentMean(SentMeanContext ctx) {
+        List<ExpContext> expList = ctx.exp();
+        double res = 0;
+        boolean isInteger = true;
+
+        for(ExpContext exp: expList) {
+            TreeParserNode val = visit(exp);
+
+            if(val.getType() == EnumType.STRING) {
+                throw new RuntimeException("Error [" + ctx.TK_MEAN().getSymbol().getLine() + "] Los parámetros debes ser numéricos");
+            }
+
+            if(val.getType() == EnumType.FLOAT) isInteger = false;
+            res += Double.parseDouble(val.getValue().toString());
+        }
+
+        if(isInteger) return new TreeParserNode(EnumType.INT, (int)( res / expList.size()));
+
+        return new TreeParserNode(EnumType.FLOAT, res / expList.size());
     }
 
     @Override
