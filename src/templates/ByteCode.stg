@@ -1,0 +1,222 @@
+group ByteCode;
+
+class(className,maxStackDepth, maxLocals, instructions) ::= <<
+; public class <className> extends Object { ...}
+.class public <className>
+.super java/lang/Object
+
+; Constructor de la clase
+.method public \<init>()V
+   .limit stack 1
+   .limit locals 1
+   aload_0
+   invokespecial java/lang/Object/\<init>()V
+   return
+.end method
+
+; main()
+.method public static main([Ljava/lang/String;)V
+   .limit stack <maxStackDepth> ; how much stack space do we need?
+   .limit locals <maxLocals> ; how many locals do we need?
+   ; code translated from input stream
+   <instructions; separator="\n">
+   return
+.end method
+>>
+
+block(instructions)::= <<
+<instructions; separator="\n">
+>>
+
+assign(id,varNum,value,comment,nemotec) ::= <<
+; <comment>
+<value; separator="\n">
+<nemotec>store <varNum> ; <id>
+>>
+
+add(a,b,nemotec) ::= <<
+; Sumando
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>add
+>>
+
+sub(a,b,nemotec) ::= <<
+; Restando
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>sub
+>>
+
+mul(a,b,nemotec) ::= <<
+; Multiplicando
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>mul
+>>
+
+div(a,b,nemotec) ::= <<
+; Dividiendo
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>div
+>>
+
+neg(a,nemotec)::=<<
+; Negando
+<a; separator="\n">
+<nemotec>neg
+>>
+
+negLogica(a,label1,label2)::=<<
+<a; separator="\n">
+ifne Label<label1>
+iconst_1
+goto Label<label2>
+Label<label1>:
+iconst_0
+Label<label2>:
+>>
+
+
+
+write(value, comment, ln,descr)::=<<
+; <comment>
+getstatic java/lang/System/out Ljava/io/PrintStream;
+<value; separator="\n">
+invokevirtual java/io/PrintStream/print<if(ln)><ln><endif>(<descr>)V
+>>
+
+iread(id,varNum,comment)::=<<
+; <comment>
+new java/util/Scanner
+dup
+getstatic java/lang/System/in Ljava/io/InputStream;
+invokespecial java/util/Scanner/\<init>(Ljava/io/InputStream;)V
+invokevirtual java/util/Scanner/nextInt()I
+istore <varNum> ; <id>
+>>
+
+fread(id,varNum,comment)::=<<
+; <comment>
+new java/util/Scanner
+dup
+getstatic java/lang/System/in Ljava/io/InputStream;
+invokespecial java/util/Scanner/\<init>(Ljava/io/InputStream;)V
+invokevirtual java/util/Scanner/nextFloat()F
+fstore <varNum> ; <id>
+>>
+
+sread(id,varNum,comment)::=<<
+; <comment>
+new java/util/Scanner
+dup
+getstatic java/lang/System/in Ljava/io/InputStream;
+invokespecial java/util/Scanner/\<init>(Ljava/io/InputStream;)V
+invokevirtual java/util/Scanner/nextLine()Ljava/lang/String;
+astore <varNum> ; <id>
+>>
+
+concatExpString(a,b,descrA,descrB)::=<<
+new java/lang/StringBuilder
+dup
+invokenonvirtual java/lang/StringBuilder/\<init>()V
+<a; separator="\n">
+invokevirtual java/lang/StringBuilder/append(<descrA>)Ljava/lang/StringBuilder;
+<b; separator="\n">
+invokevirtual java/lang/StringBuilder/append(<descrB>)Ljava/lang/StringBuilder;
+invokevirtual java/lang/StringBuilder/toString()Ljava/lang/String;
+>>
+
+concatStringString(a,b)::=<<
+<a; separator="\n">
+<b; separator="\n">
+invokevirtual java/lang/String/concat(Ljava/lang/String;)Ljava/lang/String;
+>>
+
+
+if(exp,sent1,sentElse, label1, label2) ::= <<
+;Sentencia If para enteros
+<exp> Label<label1>
+<sent1>
+<if(label2)> ;Si label está definido se genera el goto
+goto Label<label2>
+<endif>
+Label<label1>:
+<if(label2)> ;Si label está definido se generan sent2 y ...
+<sentElse>
+Label<label2>:
+<endif>
+>>
+
+elseif(exp, sent, label) ::= <<
+;Sentencia elseif
+<exp> Label<label>
+<sent>
+Label<label>
+>>
+
+else(sent) ::= <<
+;Sentencia else
+<sent>
+>>
+
+times(exp,sent,label1,label2)::=<<
+<exp>
+Label<label1>:
+dup
+ifle Label<label2>
+<sent>
+ldc 1
+isub
+goto Label<label1>
+Label<label2>:
+pop
+
+>>
+
+mean(exp,cant)::=<<
+ldc 0.0
+<exp;separator="\n">
+ldc <cant>.0
+fdiv    
+>>
+
+compareTo(a, b, compare) ::= <<
+<a; separator="\n">
+<b; separator="\n">
+<compare; separator="\n">
+>>
+
+
+while(exp, sent, label1, label2) ::= <<
+Label<label1>
+<exp> Label<label2>
+<sent; separator="\n">
+goto Label<label1>
+Label<label2>
+>>
+
+and(a, b, nemotec) ::= <<
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>and
+>>
+
+or(a, b, nemotec) ::= <<
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>or
+>>
+
+xor(a, b, nemotec) ::= <<
+<a; separator="\n">
+<b; separator="\n">
+<nemotec>xor
+>>
+
+valor(valor) ::= "<valor>"
+
+const(value) ::= "ldc <value>"
+
+load(id, varNum,nemotec) ::= "<nemotec>load <varNum> ; <id>"
