@@ -43,6 +43,9 @@ bloque      :
 sentTimes   :
                 TK_TIMES '('exp')' sent 
             ;
+sentMean    :
+                TK_MEAN '('exp (','exp)*')'
+            ;
 exp         :    
                 op=('+'|'-')exp                             #ExpSigno
                 |'!' exp                                    #ExpNeg
@@ -51,6 +54,7 @@ exp         :
                 |'(' exp ')'                                #ExpParent
                 |constante                                  #ExpCte
                 |TK_ID                                      #ExpID
+                |sentMean                                   #ExpMean
             ;
 constante   :
                 TK_CTE_INT                                  #CteInt
@@ -86,6 +90,8 @@ TK_IF       :  'IF' | 'if'
 TK_ELSE     :  'ELSE' | 'else'
             ;
 TK_TIMES    :  'TIMES' | 'times'
+            ;
+TK_MEAN     :  'MEAN'  |  'mean'
             ;
 
 //Constantes
