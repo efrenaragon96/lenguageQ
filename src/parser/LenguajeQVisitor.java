@@ -1,5 +1,5 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
-package grammars;
+package parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

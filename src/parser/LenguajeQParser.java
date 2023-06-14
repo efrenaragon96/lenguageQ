@@ -1,5 +1,6 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
-package grammars;
+package parser;
+import parser.LenguajeQVisitor;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -133,7 +134,7 @@ public class LenguajeQParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LenguajeQVisitor ) return ((LenguajeQVisitor<? extends T>)visitor).visitStart(this);
+			if ( visitor instanceof LenguajeQVisitor) return ((LenguajeQVisitor<? extends T>)visitor).visitStart(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1174,7 +1175,7 @@ public class LenguajeQParser extends Parser {
 			setState(148);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,11,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;

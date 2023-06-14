@@ -1,5 +1,5 @@
 // Generated from D:/UCLV/Compiladores/Old/LenguajeQ/src/grammars\LenguajeQ.g4 by ANTLR 4.12.0
-package grammars;
+package parser;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -107,7 +107,6 @@ public class LenguajeQLexer extends Lexer {
 	@Override
 	public String getSerializedATN() { return _serializedATN; }
 
-	@Override
 	public String[] getChannelNames() { return channelNames; }
 
 	@Override
